@@ -1,17 +1,20 @@
 $color_1: var(--color-primary);
 $color_2: rgba(0, 0, 0, 0.8);
 $font_family_1: 'Avenir', Helvetica, Arial, sans-serif;
-$background_color_1: var(--color-white);
+
  :root {
-  --color-primary: #000;
   --color-white: #fff;
   --color-red: #ed352c;
-  --color-primary-80: #333;
-  --color-primary-70: #4d4d4d;
-  --color-primary-40: #999;
-  --color-primary-30: #b3b3b3;
-  --color-primary-10: #e5e5e5;
-  --color-primary-5: #f2f2f2;
+  --color-primary: #030333;
+  --color-primary-90: #03045e;
+  --color-primary-80: #023e8a;
+  --color-primary-70: #0077b6;
+  --color-primary-60: #0096c7;
+  --color-primary-50: #00b4d8;
+  --color-primary-40: #48cae4;
+  --color-primary-30: #90e0ef;
+  --color-primary-10: #ade8f4;
+  --color-primary-5: #caf0f8;
   --space-8: 8px;
   --space-16: 16px;
   --space-20: 20px;
@@ -45,7 +48,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: $background_color_1;
+  background-color: var(--color-white);
   font-family: $font_family_1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
