@@ -1,6 +1,9 @@
 <template>
   <footer>
-    <div>Copy right &copy; 2020. All rights reserved!</div>
+    <div class="footer">
+      &copy; 2020 Copyright. All rights reserved! Nematjon Abdulloev. Version
+      1.0.0
+    </div>
   </footer>
 </template>
 
@@ -10,4 +13,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+</style>
