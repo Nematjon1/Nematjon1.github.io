@@ -7,14 +7,14 @@
       <ul class="thumbnail-list">
         <li class="thumbnail-item">
           <a
-            href="images/Barry.jpg"
+            href="@/assets/otters/Barry.jpg"
             data-image-role="trigger"
             data-image-title="Stanley Alive"
             data-image-url="images/Barry.jpg"
           >
             <img
               class="thumbnail-image"
-              src="images/Barry.jpg"
+              src="@/assets/otters/Barry.jpg"
               alt="Barry the Otter"
             />
             <span class="thumbnail-title">Barry</span>
@@ -22,14 +22,14 @@
         </li>
         <li class="thumbnail-item">
           <a
-            href="images/Robin.jpeg"
+            href="@/assets/otters/Robin.jpeg"
             data-image-role="trigger"
             data-image-title="How Deep Is Your Love"
             data-image-url="images/Robin.jpeg"
           >
             <img
               class="thumbnail-image"
-              src="images/Robin.jpeg"
+              src="@/assets/otters/Robin.jpeg"
               alt="Robin the Otter"
             />
             <span class="thumbnail-title">Robin</span>
@@ -37,14 +37,14 @@
         </li>
         <li class="thumbnail-item">
           <a
-            href="images/Maurice.jpeg"
+            href="@/assets/otters/Maurice.jpeg"
             data-image-role="trigger"
             data-image-title="You Should Be Dancing"
             data-image-url="images/Maurice.jpeg"
           >
             <img
               class="thumbnail-image"
-              src="images/Maurice.jpeg"
+              src="@/assets/otters/Maurice.jpeg"
               alt="Maurice the Otter"
             />
             <span class="thumbnail-title">Maurice</span>
@@ -52,14 +52,14 @@
         </li>
         <li class="thumbnail-item">
           <a
-            href="images/Lesley.jpeg"
+            href="@/assets/otters/Lesley.jpeg"
             data-image-role="trigger"
             data-image-title="Night Fever"
             data-image-url="images/Lesley.jpeg"
           >
             <img
               class="thumbnail-image"
-              src="images/Lesley.jpeg"
+              src="@/assets/otters/Lesley.jpeg"
               alt="Lesley the Otter"
             />
             <span class="thumbnail-title">Lesley</span>
@@ -67,14 +67,14 @@
         </li>
         <li class="thumbnail-item">
           <a
-            href="images/Barbara.jpeg"
+            href="@/assets/otters/Barbara.jpeg"
             data-image-role="trigger"
             data-image-title="To Love Somebody"
             data-image-url="images/Barbara.jpeg"
           >
             <img
               class="thumbnail-image"
-              src="images/Barbara.jpeg"
+              src="@/assets/otters/Barbara.jpeg"
               alt="Barbara the Otter"
             />
             <span class="thumbnail-title">Barbara</span>
@@ -86,7 +86,7 @@
           <img
             class="detail-image"
             data-image-role="target"
-            src="images/Barry.jpg"
+            src="@/assets/otters/Barry.jpg"
             alt=""
           />
           <span class="detail-image-title" data-image-role="title"
@@ -99,7 +99,88 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Otters",
+
+  data() {
+    return {
+      DETAIL_IMAGE_SELECTOR: '[data-image-role="target"]',
+      DETAIL_TITLE_SELECTOR: '[data-image-role="title"]',
+      DETAIL_FRAME_SELECTOR: '[data-image-role="frame"]',
+      THUMBNAIL_LINK_SELECTOR: '[data-image-role="trigger"]',
+      HIDDEN_DETAIL_CLASS: "hidden-detail",
+      TINY_EFFECT_CLASS: "is-tiny",
+      ESC_KEY: 27
+    };
+  },
+
+  methods: {
+    setDetails(imageUrl, titleText) {
+      let detailImage = document.querySelector(this.DETAIL_IMAGE_SELECTOR);
+      detailImage.setAttribute("src", imageUrl);
+      let detailTitle = document.querySelector(this.DETAIL_TITLE_SELECTOR);
+      detailTitle.textContent = titleText;
+    },
+    imageFromThumb(thumbnail) {
+      return thumbnail.getAttribute("data-image-url");
+    },
+
+    titleFromThumb(thumbnail) {
+      return thumbnail.getAttribute("data-image-title");
+    },
+
+    setDetailsFromThumb(thumbnail) {
+      this.setDetails(
+        this.imageFromThumb(thumbnail),
+        this.titleFromThumb(thumbnail)
+      );
+    },
+
+    addThumbClickHendler(thumb) {
+      thumb.addEventListener("click", function(event) {
+        event.preventDefault();
+        this.setDetailsFromThumb(thumb);
+        this.showDetails();
+      });
+    },
+    getThumbnailsArray() {
+      let thumbnails = document.querySelectorAll(this.THUMBNAIL_LINK_SELECTOR);
+      let thumbnailArray = [].slice.call(thumbnails);
+      return thumbnailArray;
+    },
+
+    hideDetails() {
+      document.body.classList.add(this.HIDDEN_DETAIL_CLASS);
+    },
+
+    showDetails() {
+      let frame = document.querySelector(this.DETAIL_FRAME_SELECTOR);
+      document.body.classList.remove(this.HIDDEN_DETAIL_CLASS);
+      frame.classList.add(this.TINY_EFFECT_CLASS);
+      setTimeout(function() {
+        frame.classList.remove(this.TINY_EFFECT_CLASS);
+      }, 140);
+    },
+
+    addKeyPressHandler() {
+      document.body.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === this.ESC_KEY) {
+          this.hideDetails();
+        }
+      });
+    },
+    initializeEvents() {
+      let thumbnails = this.getThumbnailsArray();
+      thumbnails.forEach(this.addThumbClickHendler);
+      this.addKeyPressHandler();
+    }
+  },
+
+  mounted() {
+    this.initializeEvents();
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -107,7 +188,7 @@ export default {};
   font-family: "Eagle Lake";
   font-style: normal;
   font-weight: normal;
-  src: url("@/assets/fonts/EagleLake-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/EagleLake-Regular.ttf") format("truetype");
 }
 
 *,

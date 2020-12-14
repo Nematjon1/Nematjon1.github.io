@@ -26,9 +26,9 @@ export default {
       projects: [
         {
           id: 1,
-          name: "App",
-          description: "Vue Application",
-          link: "https://github.com/Nematjon1"
+          name: "Ottergram",
+          description: "Vue Application about otters.",
+          link: "/projects/ottergram"
         },
         {
           id: 2,
