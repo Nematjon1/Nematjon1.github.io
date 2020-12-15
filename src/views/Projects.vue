@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Projects Page</h1>
+  <div class="projects__page">
+    <h1 class="projects__title">Projects Page</h1>
 
     <div class="pt-4 projects">
       <Project
@@ -49,6 +49,14 @@ export default {
 </script>
 
 <style>
+.projects__page {
+  margin: 6rem 0 0;
+}
+
+.projects__title {
+  text-align: center;
+}
+
 .projects {
   display: flex;
   flex-flow: wrap;

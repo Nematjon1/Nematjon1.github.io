@@ -1,6 +1,6 @@
 $color_1: var(--color-primary);
 $color_2: rgba(0, 0, 0, 0.8);
-$font_family_1: 'Avenir', Helvetica, Arial, sans-serif;
+$font_family_1: "Eagle Lake", 'Avenir', Helvetica, Arial, sans-serif;
 
  :root {
   --color-white: #fff;
@@ -42,6 +42,13 @@ $font_family_1: 'Avenir', Helvetica, Arial, sans-serif;
   &::after {
     box-sizing: inherit;
   }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 8px;
+  width: 10px;
+  background: #f1f1f1;
 }
 
 body {

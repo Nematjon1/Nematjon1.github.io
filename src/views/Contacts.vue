@@ -22,7 +22,7 @@ export default {
 }
 
 .contact__info {
-  margin: 2rem auto;
+  margin: 6rem auto;
   width: 100%;
   max-width: 600px;
   background-color: hsl(200, 60%, 94%);

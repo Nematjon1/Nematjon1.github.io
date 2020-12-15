@@ -16,7 +16,7 @@
   border: 2px solid hsl(200, 70%, 60%);
   background-color: hsl(200, 60%, 93%);
   max-width: 600px;
-  margin: 4rem auto;
+  margin: 6rem auto;
   border-radius: 0.5rem;
   padding: 0.4rem 0.6rem;
 }
