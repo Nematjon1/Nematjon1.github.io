@@ -34,8 +34,8 @@ export default {
   justify-content: space-between;
   background-image: linear-gradient(
     to bottom,
-    hsl(200, 60%, 80%),
-    hsl(200, 60%, 85%) 40%
+    hsl(200, 60%, 90%),
+    hsl(200, 60%, 85%)
   );
 }
 
@@ -74,7 +74,7 @@ export default {
   color: hsl(200, 35%, 60%);
 }
 
-.navbar__links .active {
+.navbar__links .router-link-active {
   text-decoration: none;
   color: hsl(200, 30%, 40%);
 }
