@@ -22,12 +22,14 @@ export default {
 <style src="@/scss/styles.scss" lang="scss"></style>
 <style lang="scss">
 #app {
-  font-family: "Eagle Lake", Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
+  line-height: 1.5;
+  letter-spacing: 0.13rem;
   flex-direction: column;
   justify-content: space-between;
 }

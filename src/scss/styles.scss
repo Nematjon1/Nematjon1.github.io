@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "Eagle Lake";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/EagleLake-Regular.ttf") format("truetype");
+}
+
 $color_1: var(--color-primary);
 $color_2: rgba(0, 0, 0, 0.8);
-$font_family_1: "Eagle Lake", 'Avenir', Helvetica, Arial, sans-serif;
+$font_family_1: 'Avenir', Helvetica, Arial, sans-serif;
 
  :root {
   --color-white: #fff;

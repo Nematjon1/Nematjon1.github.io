@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="ottergram">
     <header class="main-header">
       <h1 class="logo-text">ottergram</h1>
     </header>
@@ -130,17 +130,19 @@ export default {
     },
 
     setDetailsFromThumb(thumbnail) {
+      const self = this;
       this.setDetails(
-        this.imageFromThumb(thumbnail),
-        this.titleFromThumb(thumbnail)
+        self.imageFromThumb(thumbnail),
+        self.titleFromThumb(thumbnail)
       );
     },
 
     addThumbClickHendler(thumb) {
+      const self = this;
       thumb.addEventListener("click", function(event) {
         event.preventDefault();
-        this.setDetailsFromThumb(thumb);
-        this.showDetails();
+        self.setDetailsFromThumb(thumb);
+        self.showDetails();
       });
     },
     getThumbnailsArray() {
@@ -154,25 +156,29 @@ export default {
     },
 
     showDetails() {
+      const self = this;
       let frame = document.querySelector(this.DETAIL_FRAME_SELECTOR);
       document.body.classList.remove(this.HIDDEN_DETAIL_CLASS);
       frame.classList.add(this.TINY_EFFECT_CLASS);
       setTimeout(function() {
-        frame.classList.remove(this.TINY_EFFECT_CLASS);
+        frame.classList.remove(self.TINY_EFFECT_CLASS);
       }, 140);
     },
 
     addKeyPressHandler() {
+      const self = this;
+
       document.body.addEventListener("keyup", function(event) {
         event.preventDefault();
-        if (event.keyCode === this.ESC_KEY) {
-          this.hideDetails();
+        if (event.keyCode === self.ESC_KEY) {
+          self.hideDetails();
         }
       });
     },
     initializeEvents() {
+      const self = this;
       let thumbnails = this.getThumbnailsArray();
-      thumbnails.forEach(this.addThumbClickHendler);
+      thumbnails.forEach(self.addThumbClickHendler);
       this.addKeyPressHandler();
     }
   },
@@ -183,30 +189,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@font-face {
-  font-family: "Eagle Lake";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/assets/fonts/EagleLake-Regular.ttf") format("truetype");
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-:root {
-  font-size: 1em;
-}
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-body {
+<style lang="scss">
+.ottergram {
   background: #503b71;
   display: flex;
   flex-direction: column;
