@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer">
-      &copy; 2020 Copyright. All rights reserved! Nematjon Abdulloev. Version
+      &copy; 2017 - 2020 Copyright. All rights reserved! Nematjon Abdulloev. Version
       1.0.0
     </div>
   </footer>
