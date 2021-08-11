@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar">
-    <router-link to="/" class="navbar__logo"
-      ><span>Web Developer</span></router-link
+    <router-link
+      to="/"
+      class="navbar__logo"
+      ><span>Front End Developer</span></router-link
     >
     <span class="navbar__author">Nematjon Abdulloev</span>
 
