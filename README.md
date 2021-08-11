@@ -1,4 +1,6 @@
-# github-profile
+# Github Profile
+
+This repository represents Nematjon Abdulloev's profile. His skills and knowledge are shown.
 
 ## Project setup
 
